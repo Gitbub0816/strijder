@@ -1,5 +1,7 @@
 # Functional electrical schematic sheets
 
+> **Classification correction:** These PlantUML drawings are architecture/connectivity diagrams. For the new electrical circuit base, use [CB-01 revision B PDF and sources](../circuit-base/README.md).
+
 Revision A — inferred engineering connectivity, **not fabrication-ready ECAD**. Component values, actual IC pins, connector cavities and footprints remain subject to selection and review. Arrows identify functional paths, not a manufacturing netlist.
 
 | Sheet | Editable source | Rendered drawing |

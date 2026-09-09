@@ -1,0 +1,761 @@
+{
+  "revision": "B",
+  "components": {
+    "J101": {
+      "ref": "J101",
+      "value": "MAIN DC INPUT",
+      "mpn": "MECHANICAL-TBD",
+      "package": "bench terminal/header",
+      "sheet": 1,
+      "note": "Logical pin numbers only; no vehicle connector reuse",
+      "pins": {
+        "1": "VIN_A",
+        "2": "GND"
+      }
+    },
+    "J102": {
+      "ref": "J102",
+      "value": "OPTIONAL BACKUP",
+      "mpn": "MECHANICAL-TBD",
+      "package": "bench terminal/header",
+      "sheet": 1,
+      "note": "Logical pin numbers only; no vehicle connector reuse",
+      "pins": {
+        "1": "VIN_B",
+        "2": "GND"
+      }
+    },
+    "F101": {
+      "ref": "F101",
+      "value": "1 A / >=32 VDC",
+      "mpn": "VALUE-SPEC",
+      "package": "inline holder",
+      "sheet": 1,
+      "note": "DC-rated fast fuse; exact clearing curve and holder TBD",
+      "pins": {
+        "1": "VIN_A",
+        "2": "A_FUSED"
+      }
+    },
+    "D101": {
+      "ref": "D101",
+      "value": "STPS5L60",
+      "mpn": "STPS5L60",
+      "package": "DO-201AD",
+      "sheet": 1,
+      "note": "",
+      "pins": {
+        "A": "A_FUSED",
+        "K": "VSYS"
+      }
+    },
+    "F102": {
+      "ref": "F102",
+      "value": "1 A / >=32 VDC",
+      "mpn": "VALUE-SPEC",
+      "package": "inline holder",
+      "sheet": 1,
+      "note": "DC-rated fast fuse; exact clearing curve and holder TBD",
+      "pins": {
+        "1": "VIN_B",
+        "2": "B_FUSED"
+      }
+    },
+    "D102": {
+      "ref": "D102",
+      "value": "STPS5L60",
+      "mpn": "STPS5L60",
+      "package": "DO-201AD",
+      "sheet": 1,
+      "note": "",
+      "pins": {
+        "A": "B_FUSED",
+        "K": "VSYS"
+      }
+    },
+    "D103": {
+      "ref": "D103",
+      "value": "SMBJ18A",
+      "mpn": "SMBJ18A",
+      "package": "SMB",
+      "sheet": 1,
+      "note": "",
+      "pins": {
+        "K": "VSYS",
+        "A": "GND"
+      }
+    },
+    "C101": {
+      "ref": "C101",
+      "value": "100 uF / 50 V",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 1,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "VSYS",
+        "2": "GND"
+      }
+    },
+    "TP101": {
+      "ref": "TP101",
+      "value": "VSYS test",
+      "mpn": "TESTPOINT",
+      "package": "test pad",
+      "sheet": 1,
+      "note": "",
+      "pins": {
+        "1": "VSYS"
+      }
+    },
+    "TP102": {
+      "ref": "TP102",
+      "value": "Return test",
+      "mpn": "TESTPOINT",
+      "package": "test pad",
+      "sheet": 1,
+      "note": "",
+      "pins": {
+        "1": "GND"
+      }
+    },
+    "U201": {
+      "ref": "U201",
+      "value": "5 V linear regulator",
+      "mpn": "LM7805CT/NOPB",
+      "package": "TO-220",
+      "sheet": 2,
+      "note": "Heatsink required; tab=GND",
+      "pins": {
+        "1": "VSYS",
+        "2": "GND",
+        "3": "+5V"
+      }
+    },
+    "C201": {
+      "ref": "C201",
+      "value": "330 nF / 50 V X7R",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 2,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "VSYS",
+        "2": "GND"
+      }
+    },
+    "C202": {
+      "ref": "C202",
+      "value": "100 nF / 16 V X7R",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 2,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      }
+    },
+    "C203": {
+      "ref": "C203",
+      "value": "10 uF / 16 V",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 2,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      }
+    },
+    "D201": {
+      "ref": "D201",
+      "value": "1N5819",
+      "mpn": "1N5819",
+      "package": "DO-41",
+      "sheet": 2,
+      "note": "",
+      "pins": {
+        "K": "VSYS",
+        "A": "+5V"
+      }
+    },
+    "U202": {
+      "ref": "U202",
+      "value": "3.3 V LDO",
+      "mpn": "MCP1700-3302E/TO",
+      "package": "TO-92",
+      "sheet": 2,
+      "note": "Do not swap TO-92 pins with SOT-23 variant",
+      "pins": {
+        "1": "GND",
+        "2": "+5V",
+        "3": "+3V3"
+      }
+    },
+    "C204": {
+      "ref": "C204",
+      "value": "1 uF / 10 V X7R",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 2,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      }
+    },
+    "C205": {
+      "ref": "C205",
+      "value": "1 uF / 10 V X7R",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 2,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "F301": {
+      "ref": "F301",
+      "value": "0.75 A / >=32 VDC",
+      "mpn": "VALUE-SPEC",
+      "package": "inline holder",
+      "sheet": 3,
+      "note": "DC-rated fast fuse; exact clearing curve and holder TBD",
+      "pins": {
+        "1": "VSYS",
+        "2": "BR_SOURCE"
+      }
+    },
+    "Q301": {
+      "ref": "Q301",
+      "value": "P-channel high-side switch",
+      "mpn": "IRF4905PbF",
+      "package": "TO-220",
+      "sheet": 3,
+      "note": "Tab=drain; single FET does not reverse-block external output power",
+      "pins": {
+        "1": "BR_GATE",
+        "2": "BR_OUT",
+        "3": "BR_SOURCE"
+      }
+    },
+    "R301": {
+      "ref": "R301",
+      "value": "100 k",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 3,
+      "note": "0.25 W",
+      "pins": {
+        "1": "BR_SOURCE",
+        "2": "BR_GATE"
+      }
+    },
+    "D301": {
+      "ref": "D301",
+      "value": "12 V zener",
+      "mpn": "BZX55C12",
+      "package": "DO-35",
+      "sheet": 3,
+      "note": "",
+      "pins": {
+        "K": "BR_SOURCE",
+        "A": "BR_GATE"
+      }
+    },
+    "R302": {
+      "ref": "R302",
+      "value": "1 k / 0.5 W",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 3,
+      "note": "0.5 W",
+      "pins": {
+        "1": "BR_GATE",
+        "2": "Q302_C"
+      }
+    },
+    "Q302": {
+      "ref": "Q302",
+      "value": "Gate pull-down",
+      "mpn": "2N3904",
+      "package": "TO-92",
+      "sheet": 3,
+      "note": "onsemi E=1 B=2 C=3",
+      "pins": {
+        "1": "GND",
+        "2": "Q302_B",
+        "3": "Q302_C"
+      }
+    },
+    "R303": {
+      "ref": "R303",
+      "value": "1 k",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 3,
+      "note": "0.25 W",
+      "pins": {
+        "1": "BR_EN",
+        "2": "Q302_B"
+      }
+    },
+    "R304": {
+      "ref": "R304",
+      "value": "10 k",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 3,
+      "note": "0.25 W",
+      "pins": {
+        "1": "Q302_B",
+        "2": "GND"
+      }
+    },
+    "J301": {
+      "ref": "J301",
+      "value": "PERIPHERAL",
+      "mpn": "MECHANICAL-TBD",
+      "package": "bench terminal/header",
+      "sheet": 3,
+      "note": "Logical pin numbers only; no vehicle connector reuse",
+      "pins": {
+        "1": "BR_OUT",
+        "2": "GND"
+      }
+    },
+    "J302": {
+      "ref": "J302",
+      "value": "3.3 V ENABLE",
+      "mpn": "MECHANICAL-TBD",
+      "package": "bench terminal/header",
+      "sheet": 3,
+      "note": "Logical pin numbers only; no vehicle connector reuse",
+      "pins": {
+        "1": "BR_EN",
+        "2": "GND"
+      }
+    },
+    "R411": {
+      "ref": "R411",
+      "value": "680 / 0.5 W",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 4,
+      "note": "0.5 W",
+      "pins": {
+        "1": "IGN_RAW",
+        "2": "IGN_RAW_MID"
+      }
+    },
+    "R412": {
+      "ref": "R412",
+      "value": "680 / 0.5 W",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 4,
+      "note": "0.5 W",
+      "pins": {
+        "1": "IGN_RAW_MID",
+        "2": "IGN_RAW_LED"
+      }
+    },
+    "U401": {
+      "ref": "U401",
+      "value": "Phototransistor optocoupler",
+      "mpn": "VO617A-3",
+      "package": "DIP-4",
+      "sheet": 4,
+      "note": "A=1 K=2 E=3 C=4",
+      "pins": {
+        "1": "IGN_RAW_LED",
+        "2": "GND",
+        "3": "GND",
+        "4": "IGN_N"
+      }
+    },
+    "D401": {
+      "ref": "D401",
+      "value": "1N4148",
+      "mpn": "1N4148",
+      "package": "DO-35",
+      "sheet": 4,
+      "note": "",
+      "pins": {
+        "K": "IGN_RAW_LED",
+        "A": "GND"
+      }
+    },
+    "R413": {
+      "ref": "R413",
+      "value": "10 k",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 4,
+      "note": "0.25 W",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN_N"
+      }
+    },
+    "C401": {
+      "ref": "C401",
+      "value": "10 nF / 16 V",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 4,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "IGN_N",
+        "2": "GND"
+      }
+    },
+    "R421": {
+      "ref": "R421",
+      "value": "680 / 0.5 W",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 4,
+      "note": "0.5 W",
+      "pins": {
+        "1": "SEL_RAW",
+        "2": "SEL_RAW_MID"
+      }
+    },
+    "R422": {
+      "ref": "R422",
+      "value": "680 / 0.5 W",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 4,
+      "note": "0.5 W",
+      "pins": {
+        "1": "SEL_RAW_MID",
+        "2": "SEL_RAW_LED"
+      }
+    },
+    "U402": {
+      "ref": "U402",
+      "value": "Phototransistor optocoupler",
+      "mpn": "VO617A-3",
+      "package": "DIP-4",
+      "sheet": 4,
+      "note": "A=1 K=2 E=3 C=4",
+      "pins": {
+        "1": "SEL_RAW_LED",
+        "2": "GND",
+        "3": "GND",
+        "4": "SEL_N"
+      }
+    },
+    "D402": {
+      "ref": "D402",
+      "value": "1N4148",
+      "mpn": "1N4148",
+      "package": "DO-35",
+      "sheet": 4,
+      "note": "",
+      "pins": {
+        "K": "SEL_RAW_LED",
+        "A": "GND"
+      }
+    },
+    "R423": {
+      "ref": "R423",
+      "value": "10 k",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 4,
+      "note": "0.25 W",
+      "pins": {
+        "1": "+3V3",
+        "2": "SEL_N"
+      }
+    },
+    "C402": {
+      "ref": "C402",
+      "value": "10 nF / 16 V",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 4,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "SEL_N",
+        "2": "GND"
+      }
+    },
+    "J401": {
+      "ref": "J401",
+      "value": "Sense input header",
+      "mpn": "MECHANICAL-TBD",
+      "package": "bench terminal",
+      "sheet": 4,
+      "note": "",
+      "pins": {
+        "1": "IGN_RAW",
+        "2": "SEL_RAW",
+        "3": "GND"
+      }
+    },
+    "J402": {
+      "ref": "J402",
+      "value": "Sense logic header",
+      "mpn": "MECHANICAL-TBD",
+      "package": "bench header",
+      "sheet": 4,
+      "note": "",
+      "pins": {
+        "1": "IGN_N",
+        "2": "SEL_N",
+        "3": "GND"
+      }
+    },
+    "U501": {
+      "ref": "U501",
+      "value": "CAN transceiver, VIO variant",
+      "mpn": "TCAN1051VDRQ1",
+      "package": "SOIC-8",
+      "sheet": 5,
+      "note": "S hard-high; receive-only design",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND",
+        "3": "+5V",
+        "4": "CAN_RX_IC",
+        "5": "+3V3",
+        "6": "CAN_L",
+        "7": "CAN_H",
+        "8": "+3V3"
+      }
+    },
+    "C501": {
+      "ref": "C501",
+      "value": "100 nF / 16 V",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 5,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      }
+    },
+    "C502": {
+      "ref": "C502",
+      "value": "100 nF / 16 V",
+      "mpn": "VALUE-SPEC",
+      "package": "radial/ceramic",
+      "sheet": 5,
+      "note": "Voltage and dielectric per displayed value",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "R501": {
+      "ref": "R501",
+      "value": "1 k",
+      "mpn": "VALUE-SPEC",
+      "package": "axial, 1%",
+      "sheet": 5,
+      "note": "0.25 W",
+      "pins": {
+        "1": "CAN_RX_IC",
+        "2": "CAN_RX"
+      }
+    },
+    "J501": {
+      "ref": "J501",
+      "value": "BUS HEADER",
+      "mpn": "MECHANICAL-TBD",
+      "package": "bench terminal/header",
+      "sheet": 5,
+      "note": "Logical pin numbers only; no vehicle connector reuse",
+      "pins": {
+        "1": "CAN_H",
+        "2": "CAN_L",
+        "3": "GND"
+      }
+    },
+    "J502": {
+      "ref": "J502",
+      "value": "MCU RECEIVE",
+      "mpn": "MECHANICAL-TBD",
+      "package": "bench terminal/header",
+      "sheet": 5,
+      "note": "Logical pin numbers only; no vehicle connector reuse",
+      "pins": {
+        "1": "CAN_RX",
+        "2": "GND"
+      }
+    }
+  },
+  "nets": {
+    "VIN_A": [
+      "J101.1",
+      "F101.1"
+    ],
+    "GND": [
+      "J101.2",
+      "J102.2",
+      "D103.A",
+      "C101.2",
+      "TP102.1",
+      "U201.2",
+      "C201.2",
+      "C202.2",
+      "C203.2",
+      "U202.1",
+      "C204.2",
+      "C205.2",
+      "Q302.1",
+      "R304.2",
+      "J301.2",
+      "J302.2",
+      "U401.2",
+      "U401.3",
+      "D401.A",
+      "C401.2",
+      "U402.2",
+      "U402.3",
+      "D402.A",
+      "C402.2",
+      "J401.3",
+      "J402.3",
+      "U501.2",
+      "C501.2",
+      "C502.2",
+      "J501.3",
+      "J502.2"
+    ],
+    "VIN_B": [
+      "J102.1",
+      "F102.1"
+    ],
+    "A_FUSED": [
+      "F101.2",
+      "D101.A"
+    ],
+    "VSYS": [
+      "D101.K",
+      "D102.K",
+      "D103.K",
+      "C101.1",
+      "TP101.1",
+      "U201.1",
+      "C201.1",
+      "D201.K",
+      "F301.1"
+    ],
+    "B_FUSED": [
+      "F102.2",
+      "D102.A"
+    ],
+    "+5V": [
+      "U201.3",
+      "C202.1",
+      "C203.1",
+      "D201.A",
+      "U202.2",
+      "C204.1",
+      "U501.3",
+      "C501.1"
+    ],
+    "+3V3": [
+      "U202.3",
+      "C205.1",
+      "R413.1",
+      "R423.1",
+      "U501.1",
+      "U501.5",
+      "U501.8",
+      "C502.1"
+    ],
+    "BR_SOURCE": [
+      "F301.2",
+      "Q301.3",
+      "R301.1",
+      "D301.K"
+    ],
+    "BR_GATE": [
+      "Q301.1",
+      "R301.2",
+      "D301.A",
+      "R302.1"
+    ],
+    "BR_OUT": [
+      "Q301.2",
+      "J301.1"
+    ],
+    "Q302_C": [
+      "R302.2",
+      "Q302.3"
+    ],
+    "Q302_B": [
+      "Q302.2",
+      "R303.2",
+      "R304.1"
+    ],
+    "BR_EN": [
+      "R303.1",
+      "J302.1"
+    ],
+    "IGN_RAW": [
+      "R411.1",
+      "J401.1"
+    ],
+    "IGN_RAW_MID": [
+      "R411.2",
+      "R412.1"
+    ],
+    "IGN_RAW_LED": [
+      "R412.2",
+      "U401.1",
+      "D401.K"
+    ],
+    "IGN_N": [
+      "U401.4",
+      "R413.2",
+      "C401.1",
+      "J402.1"
+    ],
+    "SEL_RAW": [
+      "R421.1",
+      "J401.2"
+    ],
+    "SEL_RAW_MID": [
+      "R421.2",
+      "R422.1"
+    ],
+    "SEL_RAW_LED": [
+      "R422.2",
+      "U402.1",
+      "D402.K"
+    ],
+    "SEL_N": [
+      "U402.4",
+      "R423.2",
+      "C402.1",
+      "J402.2"
+    ],
+    "CAN_RX_IC": [
+      "U501.4",
+      "R501.1"
+    ],
+    "CAN_L": [
+      "U501.6",
+      "J501.2"
+    ],
+    "CAN_H": [
+      "U501.7",
+      "J501.1"
+    ],
+    "CAN_RX": [
+      "R501.2",
+      "J502.1"
+    ]
+  }
+}

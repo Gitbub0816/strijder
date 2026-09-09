@@ -1,5 +1,7 @@
 # Strijder engineering definition — revision A
 
+> **Circuit-base update:** [CB-01 revision B](circuit-base/README.md) now provides five actual circuit drawing sheets (PDF/SVG), component values, semiconductor pin assignments and a pin netlist for a bounded low-power control-board prototype. The earlier PlantUML sheets below are architecture/connectivity references, not engineering-grade electrical schematics.
+
 **Release state: inferred design for engineering review, not fabrication or vehicle installation.**
 
 This package translates the available conversations into schematic-level connectivity, interface requirements, calculations, and verification work. It does not substitute invented detail for missing memories. Personal-context retrieval was unavailable during this revision; the evidence register distinguishes direct user statements, repository claims, historical assistant reports, and new inference.

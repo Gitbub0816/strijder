@@ -24,6 +24,7 @@ This repository currently contains the original Strijder Vehicle Safety marketin
 
 ## Documentation map
 
+- [Circuit base: five electrical drawing sheets, BOM and pin netlist](docs/engineering/circuit-base/README.md)
 - [Engineering definition and functional schematics](docs/engineering/README.md)
 - [Documentation index](docs/README.md)
 - [Status, provenance, and limits](docs/STATUS_AND_PROVENANCE.md)

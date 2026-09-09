@@ -1,0 +1,49 @@
+Ref,Value,MPN_or_selection,Package,Sheet,Notes
+J101,MAIN DC INPUT,MECHANICAL-TBD,bench terminal/header,1,Logical pin numbers only; no vehicle connector reuse
+J102,OPTIONAL BACKUP,MECHANICAL-TBD,bench terminal/header,1,Logical pin numbers only; no vehicle connector reuse
+F101,1 A / >=32 VDC,VALUE-SPEC,inline holder,1,DC-rated fast fuse; exact clearing curve and holder TBD
+D101,STPS5L60,STPS5L60,DO-201AD,1,
+F102,1 A / >=32 VDC,VALUE-SPEC,inline holder,1,DC-rated fast fuse; exact clearing curve and holder TBD
+D102,STPS5L60,STPS5L60,DO-201AD,1,
+D103,SMBJ18A,SMBJ18A,SMB,1,
+C101,100 uF / 50 V,VALUE-SPEC,radial/ceramic,1,Voltage and dielectric per displayed value
+TP101,VSYS test,TESTPOINT,test pad,1,
+TP102,Return test,TESTPOINT,test pad,1,
+U201,5 V linear regulator,LM7805CT/NOPB,TO-220,2,Heatsink required; tab=GND
+C201,330 nF / 50 V X7R,VALUE-SPEC,radial/ceramic,2,Voltage and dielectric per displayed value
+C202,100 nF / 16 V X7R,VALUE-SPEC,radial/ceramic,2,Voltage and dielectric per displayed value
+C203,10 uF / 16 V,VALUE-SPEC,radial/ceramic,2,Voltage and dielectric per displayed value
+D201,1N5819,1N5819,DO-41,2,
+U202,3.3 V LDO,MCP1700-3302E/TO,TO-92,2,Do not swap TO-92 pins with SOT-23 variant
+C204,1 uF / 10 V X7R,VALUE-SPEC,radial/ceramic,2,Voltage and dielectric per displayed value
+C205,1 uF / 10 V X7R,VALUE-SPEC,radial/ceramic,2,Voltage and dielectric per displayed value
+F301,0.75 A / >=32 VDC,VALUE-SPEC,inline holder,3,DC-rated fast fuse; exact clearing curve and holder TBD
+Q301,P-channel high-side switch,IRF4905PbF,TO-220,3,Tab=drain; single FET does not reverse-block external output power
+R301,100 k,VALUE-SPEC,"axial, 1%",3,0.25 W
+D301,12 V zener,BZX55C12,DO-35,3,
+R302,1 k / 0.5 W,VALUE-SPEC,"axial, 1%",3,0.5 W
+Q302,Gate pull-down,2N3904,TO-92,3,onsemi E=1 B=2 C=3
+R303,1 k,VALUE-SPEC,"axial, 1%",3,0.25 W
+R304,10 k,VALUE-SPEC,"axial, 1%",3,0.25 W
+J301,PERIPHERAL,MECHANICAL-TBD,bench terminal/header,3,Logical pin numbers only; no vehicle connector reuse
+J302,3.3 V ENABLE,MECHANICAL-TBD,bench terminal/header,3,Logical pin numbers only; no vehicle connector reuse
+R411,680 / 0.5 W,VALUE-SPEC,"axial, 1%",4,0.5 W
+R412,680 / 0.5 W,VALUE-SPEC,"axial, 1%",4,0.5 W
+U401,Phototransistor optocoupler,VO617A-3,DIP-4,4,A=1 K=2 E=3 C=4
+D401,1N4148,1N4148,DO-35,4,
+R413,10 k,VALUE-SPEC,"axial, 1%",4,0.25 W
+C401,10 nF / 16 V,VALUE-SPEC,radial/ceramic,4,Voltage and dielectric per displayed value
+R421,680 / 0.5 W,VALUE-SPEC,"axial, 1%",4,0.5 W
+R422,680 / 0.5 W,VALUE-SPEC,"axial, 1%",4,0.5 W
+U402,Phototransistor optocoupler,VO617A-3,DIP-4,4,A=1 K=2 E=3 C=4
+D402,1N4148,1N4148,DO-35,4,
+R423,10 k,VALUE-SPEC,"axial, 1%",4,0.25 W
+C402,10 nF / 16 V,VALUE-SPEC,radial/ceramic,4,Voltage and dielectric per displayed value
+J401,Sense input header,MECHANICAL-TBD,bench terminal,4,
+J402,Sense logic header,MECHANICAL-TBD,bench header,4,
+U501,"CAN transceiver, VIO variant",TCAN1051VDRQ1,SOIC-8,5,S hard-high; receive-only design
+C501,100 nF / 16 V,VALUE-SPEC,radial/ceramic,5,Voltage and dielectric per displayed value
+C502,100 nF / 16 V,VALUE-SPEC,radial/ceramic,5,Voltage and dielectric per displayed value
+R501,1 k,VALUE-SPEC,"axial, 1%",5,0.25 W
+J501,BUS HEADER,MECHANICAL-TBD,bench terminal/header,5,Logical pin numbers only; no vehicle connector reuse
+J502,MCU RECEIVE,MECHANICAL-TBD,bench terminal/header,5,Logical pin numbers only; no vehicle connector reuse
