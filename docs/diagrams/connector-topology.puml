@@ -1,0 +1,40 @@
+@startuml
+title Evolved functional connector topology
+top to bottom direction
+skinparam backgroundColor #0B0B0F
+skinparam defaultFontColor #F4F1E8
+skinparam ArrowColor #C89B3C
+skinparam componentBorderColor #D8C184
+skinparam componentBackgroundColor #171922
+skinparam componentFontColor #F4F1E8
+
+component "Vision Pro EVS\nCore enclosure" as Core
+
+component "Vehicle Power\n5 positions" as Power
+component "Validator\n6 positions" as Validator
+component "CAN / OBD / Sense\n6 positions" as CAN
+component "Aux Sensor\n3 positions" as AuxSensor
+component "Interlock Actuator\n4 positions" as Interlock
+component "Lighting Controller\n16 positions" as LightController
+component "Lighting Selector\n16 positions" as LightSelector
+component "Main Dashcam Head\n20 positions" as MainHead
+component "CAD / Windows Display\n40 positions" as Display
+component "Aux Camera Display\n8 positions" as AuxDisplay
+
+Power --> Core
+Validator --> Core
+CAN --> Core
+AuxSensor --> Core
+Interlock --> Core
+LightController --> Core
+LightSelector --> Core
+MainHead --> Core
+Display --> Core
+AuxDisplay --> Core
+
+note right of Core
+  Functional allocation only.
+  No final cavity-level pinout.
+  Exact connector family remains TBD.
+end note
+@enduml

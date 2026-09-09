@@ -1,0 +1,47 @@
+@startuml
+title Preliminary Strijder power distribution
+left to right direction
+skinparam backgroundColor #0B0B0F
+skinparam defaultFontColor #F4F1E8
+skinparam ArrowColor #C89B3C
+skinparam rectangleBorderColor #D8C184
+skinparam rectangleBackgroundColor #171922
+skinparam rectangleFontColor #F4F1E8
+
+rectangle "Vehicle battery / ignition" as Battery
+rectangle "Independent input fuse" as Fuse
+rectangle "Reverse polarity, surge,\ninrush and filtering" as Protect
+rectangle "UPS power path\n50-60 Wh usable target" as UPS
+rectangle "Protected branch\nswitches / e-fuses" as Branch
+
+rectangle "Vision Core\nplanning 30 W" as Core
+rectangle "Windows + primary display\nplanning 20 W" as Display
+rectangle "Main head + cameras\nplanning 12 W" as Cameras
+rectangle "Aux display\nplanning 8 W" as Aux
+rectangle "I/O + radios + sensors\nplanning 5 W" as IO
+rectangle "Independent lighting\npower controller" as Lighting
+
+Battery --> Fuse
+Fuse --> Protect
+Protect --> UPS
+UPS --> Branch
+Branch --> Core
+Branch --> Display
+Branch --> Cameras
+Branch --> Aux
+Branch --> IO
+Fuse --> Lighting : separate high-current feed
+IO --> Lighting : control / feedback only
+
+note bottom of Branch
+  Total planning load: 75 W
+  Main feed: 2 positive + 2 return
+  4.17 A/contact at 9 V ideal sharing
+end note
+
+note bottom of UPS
+  75 W x 20 min = 25 Wh ideal
+  Example discussed: 12.8 V, 6 Ah
+  about 76.8 Wh nominal
+end note
+@enduml

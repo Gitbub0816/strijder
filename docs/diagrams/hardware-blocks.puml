@@ -1,0 +1,67 @@
+@startuml
+title Vision Pro EVS hardware blocks and fault boundaries
+top to bottom direction
+skinparam backgroundColor #0B0B0F
+skinparam defaultFontColor #F4F1E8
+skinparam ArrowColor #C89B3C
+skinparam componentBorderColor #D8C184
+skinparam componentBackgroundColor #171922
+skinparam componentFontColor #F4F1E8
+skinparam packageBorderColor #6F7480
+skinparam packageBackgroundColor #111219
+
+package "Protected energy domain" {
+  component "Vehicle power front end" as PFE
+  component "UPS / power path" as UPS
+  component "Protected branch power" as Branch
+}
+
+package "Embedded vision domain" {
+  component "NVIDIA / Linux\nVision Core" as Core
+  component "Evidence SSD" as SSD
+  component "Cellular + Wi-Fi +\nBluetooth + GNSS" as Radio
+}
+
+package "Vehicle-control domain" {
+  component "Deterministic I/O MCU" as MCU
+  component "Lighting controller\ninterface" as LightCtl
+  component "Independent fused\nlighting power module" as LightPower
+}
+
+package "Operator domain" {
+  component "CAD / Windows display" as Display
+  component "Aux camera display" as AuxDisplay
+  component "Lighting selector" as Selector
+}
+
+package "Perception" {
+  component "Main dashcam head" as MainCam
+  component "Aux cameras 2-4" as AuxCam
+  component "Vehicle / aux sensors" as VehicleSensors
+}
+
+PFE --> UPS
+UPS --> Branch
+Branch --> Core
+Branch --> MCU
+Branch --> Display
+Branch --> MainCam
+Branch --> Radio
+Core <--> SSD
+Core <--> Radio
+MainCam --> Core : media / control
+AuxCam --> Core : camera links
+VehicleSensors --> MCU
+MCU <--> Core : authenticated state / requests
+Display <--> Core : local API / preview
+Display <--> AuxDisplay : selected view / control
+Selector --> MCU : physical mode request
+MCU --> LightCtl : named mode / feedback
+PFE --> LightPower : separate fused feed
+LightCtl --> LightPower : low-level control
+
+note right of LightPower
+  High-current lamp loads do not
+  traverse compute interconnects.
+end note
+@enduml

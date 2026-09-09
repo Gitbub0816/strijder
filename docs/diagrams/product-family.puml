@@ -1,0 +1,42 @@
+@startuml
+title Strijder product family and responsibility boundaries
+top to bottom direction
+skinparam backgroundColor #0B0B0F
+skinparam defaultFontColor #F4F1E8
+skinparam ArrowColor #C89B3C
+skinparam packageBorderColor #C89B3C
+skinparam packageBackgroundColor #14151B
+skinparam componentBorderColor #D8C184
+skinparam componentBackgroundColor #1B1D25
+skinparam componentFontColor #F4F1E8
+
+package "Strijder" {
+  component "Strijder Vision\nVehicle platform" as Vision
+  component "Vision Pro EVS\nIntegrated emergency-vehicle system" as Pro
+  component "Cadmium CAD\nDispatch + in-vehicle MDT" as Cadmium
+}
+
+Vision --> Pro : high-compute configuration
+Pro --> Cadmium : integrates
+
+note right of Vision
+  Recording and evidence
+  Vehicle diagnostics
+  Operator authentication
+  Offline operation
+  Optional cloud administration
+end note
+
+note right of Pro
+  NVIDIA/Linux Vision Core
+  Cameras and operator head
+  Windows/CAD display
+  Lighting and interlock interfaces
+end note
+
+note right of Cadmium
+  CAD only
+  Calls, units, statuses
+  Maps, routing, messaging
+end note
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+title Strijder Cadmium logical deployment
+left to right direction
+skinparam backgroundColor #0B0B0F
+skinparam defaultFontColor #F4F1E8
+skinparam ArrowColor #C89B3C
+skinparam nodeBorderColor #D8C184
+skinparam nodeBackgroundColor #171922
+skinparam nodeFontColor #F4F1E8
+skinparam componentBorderColor #9A79C9
+skinparam componentBackgroundColor #191522
+skinparam componentFontColor #F4F1E8
+
+node "Dispatch workstation" {
+  component "StrijderCadmium.Dispatch\n.NET 8 WPF" as Dispatch
+  component "WebView2 / Mapbox" as DMap
+  database "Local SQLite" as DDB
+}
+
+cloud "Cadmium service\nProduction backend TBD" as Service
+
+node "Vision Pro EVS vehicle" {
+  component "StrijderCadmium.Mdt\n.NET 8 WPF" as MDT
+  component "WebView2 / Mapbox" as MMap
+  database "Local SQLite + queue" as MDB
+  component "Vision local API" as Vision
+}
+
+Dispatch <--> DMap : validated JSON bridge
+Dispatch <--> DDB
+Dispatch <--> Service : calls / units / messages
+Service <--> MDT : durable synchronization
+MDT <--> MMap : route / position / selection
+MDT <--> MDB
+MDT <--> Vision : health / context / event mark
+
+note bottom of Service
+  Proof version used one executable with
+  switchable Dispatch and vehicle modes.
+  Production target separates applications.
+end note
+@enduml

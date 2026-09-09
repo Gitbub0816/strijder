@@ -1,0 +1,34 @@
+@startuml
+title Evidence lifecycle and custody boundaries
+left to right direction
+skinparam backgroundColor #0B0B0F
+skinparam defaultFontColor #F4F1E8
+skinparam ArrowColor #C89B3C
+skinparam stateBorderColor #D8C184
+skinparam stateBackgroundColor #171922
+skinparam stateFontColor #F4F1E8
+
+[*] --> Capturing
+Capturing : Timestamped camera/audio frames
+Capturing --> Buffered : encode and segment
+Buffered : Bounded local ring buffer
+Buffered --> Preserved : authorized trigger and pre/post window
+Buffered --> Expired : retention policy overwrite
+Preserved : Segments protected from ordinary overwrite
+Preserved --> Sealed : hash, manifest, journal, encrypt
+Sealed --> Queued : synchronization policy permits
+Queued --> Transferring : WAN available
+Transferring --> Queued : interruption / retry
+Transferring --> Received : verified remote receipt
+Received --> Retained : retention / legal-hold policy
+Retained --> Exported : role and approval checks
+Exported : Encrypted package + manifest + audit
+Retained --> Disposed : authorized, journaled disposition
+Expired --> [*]
+Disposed --> [*]
+
+note bottom of Sealed
+  Original media is distinct from
+  derived AI annotations.
+end note
+@enduml

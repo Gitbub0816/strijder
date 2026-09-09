@@ -1,0 +1,40 @@
+@startuml
+title Vehicle operating and degraded states
+top to bottom direction
+skinparam backgroundColor #0B0B0F
+skinparam defaultFontColor #F4F1E8
+skinparam ArrowColor #C89B3C
+skinparam stateBorderColor #D8C184
+skinparam stateBackgroundColor #171922
+skinparam stateFontColor #F4F1E8
+
+[*] --> Off
+Off --> Booting : ignition / authorized wake
+Booting --> Operational : rails, I/O, storage and recorder healthy
+Booting --> FaultContained : required subsystem fault
+
+state Operational {
+  [*] --> Offline
+  Offline --> Connected : WAN and services available
+  Connected --> Offline : WAN / cloud loss
+  Offline : Recording, local auth and I/O continue
+  Connected : CAD, policy, health and evidence sync
+}
+
+Operational --> LowPower : voltage / thermal / UPS condition
+LowPower --> Operational : recovery before shutdown threshold
+LowPower --> ShuttingDown : reserve or temperature limit
+Operational --> EvidenceProtection : event open / finalizing
+EvidenceProtection --> Operational : durable seal complete
+Operational --> FaultContained : subsystem failure
+FaultContained --> Operational : approved recovery
+Operational --> Service : authorized stationary service state
+Service --> Operational : tests pass / service closes
+Operational --> ShuttingDown : ignition off / authorized command
+ShuttingDown --> Off : journals and storage finalized
+
+note right of FaultContained
+  Preserve independent healthy domains.
+  Never imply failed recording is healthy.
+end note
+@enduml

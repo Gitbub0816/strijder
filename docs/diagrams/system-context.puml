@@ -1,0 +1,46 @@
+@startuml
+title Strijder Vision system context
+left to right direction
+skinparam backgroundColor #0B0B0F
+skinparam defaultFontColor #F4F1E8
+skinparam ArrowColor #C89B3C
+skinparam rectangleBorderColor #D8C184
+skinparam rectangleBackgroundColor #171922
+skinparam rectangleFontColor #F4F1E8
+skinparam cloudBorderColor #9A79C9
+skinparam cloudBackgroundColor #191522
+skinparam cloudFontColor #F4F1E8
+
+actor "Vehicle operator" as Operator
+actor Dispatcher
+actor "Fleet / evidence admin" as Admin
+
+rectangle "Vehicle" {
+  rectangle "Strijder Vision Pro EVS" as EVS
+  rectangle "Cadmium MDT" as MDT
+  rectangle "Vehicle I/O and\nlighting interface" as IO
+  rectangle "Cameras and sensors" as Sensors
+}
+
+cloud "Cadmium services" as CADCloud
+cloud "Optional fleet / evidence\ncontrol plane" as Cloud
+rectangle "Dispatch Console" as Dispatch
+rectangle "Vehicle networks and\nexternal lighting power" as Vehicle
+
+Operator --> EVS : authenticate / review / mark event
+Operator --> MDT : assignment / status / route
+Sensors --> EVS : media / position / observations
+EVS --> IO : authenticated named requests
+IO <--> Vehicle : sense / protected control
+MDT <--> CADCloud : calls / units / messages
+Dispatch <--> CADCloud
+Dispatcher --> Dispatch
+EVS <--> Cloud : policy / health / evidence
+Admin --> Cloud
+MDT <--> EVS : context / health / event association
+
+note bottom of EVS
+  Local recording and policy continue offline.
+  Cloud and CAD are not safety dependencies.
+end note
+@enduml
