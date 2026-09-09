@@ -36,11 +36,11 @@ This directory is the canonical written description of the Strijder Vision suite
 
 | View | Source | Rendered image |
 |---|---|---|
-| Product family | [product-family.puml](diagrams/product-family.puml) | [SVG](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/product-family.puml) |
-| System context | [system-context.puml](diagrams/system-context.puml) | [SVG](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/system-context.puml) |
-| Hardware blocks | [hardware-blocks.puml](diagrams/hardware-blocks.puml) | [SVG](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/hardware-blocks.puml) |
-| Power distribution | [power-distribution.puml](diagrams/power-distribution.puml) | [SVG](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/power-distribution.puml) |
-| Connector topology | [connector-topology.puml](diagrams/connector-topology.puml) | [SVG](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/connector-topology.puml) |
-| Cadmium deployment | [cadmium-deployment.puml](diagrams/cadmium-deployment.puml) | [SVG](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/cadmium-deployment.puml) |
-| Evidence lifecycle | [evidence-lifecycle.puml](diagrams/evidence-lifecycle.puml) | [SVG](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/evidence-lifecycle.puml) |
-| Degraded operation | [degraded-operation.puml](diagrams/degraded-operation.puml) | [SVG](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/degraded-operation.puml) |
+| Product family | [product-family.puml](diagrams/product-family.puml) | [SVG](diagrams/rendered/product-family.svg) |
+| System context | [system-context.puml](diagrams/system-context.puml) | [SVG](diagrams/rendered/system-context.svg) |
+| Hardware blocks | [hardware-blocks.puml](diagrams/hardware-blocks.puml) | [SVG](diagrams/rendered/hardware-blocks.svg) |
+| Power distribution | [power-distribution.puml](diagrams/power-distribution.puml) | [SVG](diagrams/rendered/power-distribution.svg) |
+| Connector topology | [connector-topology.puml](diagrams/connector-topology.puml) | [SVG](diagrams/rendered/connector-topology.svg) |
+| Cadmium deployment | [cadmium-deployment.puml](diagrams/cadmium-deployment.puml) | [SVG](diagrams/rendered/cadmium-deployment.svg) |
+| Evidence lifecycle | [evidence-lifecycle.puml](diagrams/evidence-lifecycle.puml) | [SVG](diagrams/rendered/evidence-lifecycle.svg) |
+| Degraded operation | [degraded-operation.puml](diagrams/degraded-operation.puml) | [SVG](diagrams/rendered/degraded-operation.svg) |

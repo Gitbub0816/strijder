@@ -26,7 +26,7 @@ The product is not simply a camera with a cloud portal. Its defining idea is tha
 
 ## Product family
 
-![Product family](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/product-family.puml)
+![Product family](../diagrams/rendered/product-family.svg)
 
 ### Strijder Vision
 

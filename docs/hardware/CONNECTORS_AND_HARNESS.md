@@ -52,7 +52,7 @@ The exact manufacturer, sealing system, contact geometry, and current rating wer
 
 ## Current recommended relationship
 
-![Connector topology](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/connector-topology.puml)
+![Connector topology](../diagrams/rendered/connector-topology.svg)
 
 Generation B is the functional baseline because it exposes the complete suite architecture. Generation A remains a viable rugged external-connector reference and contains actual named DEUTSCH/FAKRA families. A final design may use Generation B's functional separation implemented with appropriately sized DEUTSCH, automotive high-speed, and RF connectors rather than one uniform 2.00 mm family.
 

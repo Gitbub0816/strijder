@@ -35,7 +35,7 @@ The proof was one Windows WPF executable with two switchable modes structured as
 
 They shared `Calls`, `Units`, and `Steps`, plus a shared `wwwroot/map.html`. Production intent separates the executables while keeping shared contracts and services.
 
-![Cadmium deployment](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/cadmium-deployment.puml)
+![Cadmium deployment](../diagrams/rendered/cadmium-deployment.svg)
 
 ## Domain model
 

@@ -20,7 +20,7 @@ These are product requirements/concepts. The current repository does not contain
 
 ## Evidence lifecycle
 
-![Evidence lifecycle](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/evidence-lifecycle.puml)
+![Evidence lifecycle](../diagrams/rendered/evidence-lifecycle.svg)
 
 ### Capture
 

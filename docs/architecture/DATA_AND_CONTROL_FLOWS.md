@@ -26,7 +26,7 @@ Strijder traffic is divided into distinct classes so access, priority, retention
 8. The journal records preservation and any subsequent access/export.
 9. The synchronization agent transfers content under policy and resumes after interruption.
 
-![Evidence lifecycle](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/evidence-lifecycle.puml)
+![Evidence lifecycle](../diagrams/rendered/evidence-lifecycle.svg)
 
 ## CAD flow
 

@@ -110,7 +110,7 @@ A 12.8 V, 6 Ah pack stores approximately 76.8 Wh nominal. If only 50–60 Wh is 
 
 ## Power-tree proposal
 
-![Power distribution](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/power-distribution.puml)
+![Power distribution](../diagrams/rendered/power-distribution.svg)
 
 1. Vehicle battery and ignition enter through independently fused harness conductors.
 2. Front-end protection handles polarity, surges/transients, filtering, and controlled inrush.

@@ -4,7 +4,7 @@
 
 The Vision Pro EVS hardware is reconstructed as a modular vehicle system around a protected power domain, NVIDIA/Linux Vision Core, deterministic vehicle I/O controller, Windows/Cadmium display domain, camera network, and radios.
 
-![Hardware block diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/hardware-blocks.puml)
+![Hardware block diagram](../diagrams/rendered/hardware-blocks.svg)
 
 ## Major assemblies
 

@@ -9,7 +9,7 @@ Strijder Vision is a distributed vehicle system, not one monolithic computer. Th
 3. **Operator/Cadmium domain** — Windows-based display/compute running the Cadmium MDT and approved vehicle UI.
 4. **Remote services** — Cadmium Dispatch Console and optional fleet/evidence administration services.
 
-![Functional hardware blocks](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/hardware-blocks.puml)
+![Functional hardware blocks](../diagrams/rendered/hardware-blocks.svg)
 
 ## Fault-containment domains
 

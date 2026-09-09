@@ -43,9 +43,9 @@ This repository currently contains the original Strijder Vehicle Safety marketin
 
 ## Architecture at a glance
 
-![Strijder Vision system context](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/system-context.puml)
+![Strijder Vision system context](docs/diagrams/rendered/system-context.svg)
 
-The editable source for every diagram is committed as plain PlantUML. Images are rendered on demand by the public PlantUML server; no local Java or Graphviz installation is required.
+The editable source for every diagram is committed as plain PlantUML, with a rendered SVG beside it. The SVGs were produced by the public PlantUML server; no local Java or Graphviz installation is required.
 
 ## Repository layout
 

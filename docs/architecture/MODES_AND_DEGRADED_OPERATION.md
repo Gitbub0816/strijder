@@ -30,7 +30,7 @@
 | Primary vehicle power | UPS-supported functions | Nonessential loads | Enter hold-up policy, finalize evidence, controlled shutdown |
 | Overtemperature | Safety controller, prioritized functions | AI/preview/secondary encoding | Throttle or shed in documented order |
 
-![Degraded operation](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Gitbub0816/strijder/main/docs/diagrams/degraded-operation.puml)
+![Degraded operation](../diagrams/rendered/degraded-operation.svg)
 
 ## Load-shed order
 
