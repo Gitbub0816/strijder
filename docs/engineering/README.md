@@ -2,6 +2,8 @@
 
 > **Circuit-base update:** [CB-01 revision B](circuit-base/README.md) now provides five actual circuit drawing sheets (PDF/SVG), component values, semiconductor pin assignments and a pin netlist for a bounded low-power control-board prototype. The earlier PlantUML sheets below are architecture/connectivity references, not engineering-grade electrical schematics.
 
+> **KiCad capture:** the [Strijder Vision Pro/EVS modular carrier KiCad project](../../hardware/strijder-carrier/README.md) reproduces the CB-01 circuits pin-for-pin in a native KiCad schematic (netlist-verified against `circuit-base/output/pin-netlist.csv`) and adds the full-suite carrier blocks — SOM, x86 COM Express (EVS), cameras, comms, storage, vehicle connector wall — at the logical-interface level with a Pro/EVS population matrix.
+
 **Release state: inferred design for engineering review, not fabrication or vehicle installation.**
 
 This package translates the available conversations into schematic-level connectivity, interface requirements, calculations, and verification work. It does not substitute invented detail for missing memories. Personal-context retrieval was unavailable during this revision; the evidence register distinguishes direct user statements, repository claims, historical assistant reports, and new inference.
