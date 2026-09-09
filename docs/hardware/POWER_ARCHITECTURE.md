@@ -1,5 +1,7 @@
 # Power architecture and preliminary budget
 
+> **Revision A correction:** The 75 W, 22-contact and 4.2 A/contact figures below are historical planning examples, not validated requirements or safe connector ratings. See [engineering power and protection](../engineering/POWER_AND_PROTECTION.md) for charging/conversion losses, unequal contact sharing, fault cases and the unresolved final pin budget. That review takes precedence over stronger wording below.
+
 ## Known planning anchors
 
 - Nominal vehicle system: 12–14 V class.

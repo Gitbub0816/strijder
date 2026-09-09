@@ -4,6 +4,8 @@ This directory is the canonical written description of the Strijder Vision suite
 
 ## Reading order
 
+Start with the [revision A engineering package](engineering/README.md) for functional schematics, evidence-qualified specifications, corrected power sizing, and release gates.
+
 1. [Status and provenance](STATUS_AND_PROVENANCE.md)
 2. [Vision and scope](product/VISION_AND_SCOPE.md)
 3. [Product history and brand](product/HISTORY_AND_BRAND.md)

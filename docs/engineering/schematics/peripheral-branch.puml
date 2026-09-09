@@ -1,0 +1,55 @@
+@startuml
+title Strijder repeated peripheral branch - conceptual connectivity
+top to bottom direction
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+rectangle "VPERIPH_n\nSelected regulated input rail" as RAIL
+rectangle "C201\nLocal input decoupling" as CIN
+rectangle "U201\nHigh-side protection / eFuse\nCurrent limit + short shutdown + ramp\nReverse blocking if required" as SW
+rectangle "R201 / C203\nILIM / fault timer / ramp networks\nSelected controller circuit TBD" as CFG
+rectangle "C202 / D201\nOutput decoupling / connector clamp" as OUT
+rectangle "J201\nSupply contact(s): allocation TBD\nReturn contact(s): allocation TBD" as CONN
+rectangle "Harness + peripheral\nLoad voltage / steady / inrush TBD" as LOAD
+rectangle "U105 supervisor\nHardware-safe default enables\nVoltage and current telemetry" as MCU
+rectangle "PWR_RTN\nSized intentional return path" as RTN
+rectangle "CHASSIS\nApproved shield termination" as CHASSIS
+
+RAIL --> SW : input
+RAIL --> CIN : shunt tap
+CIN -- RTN
+CFG ..> SW : controller-specific setup
+SW --> CONN : VBR_n
+SW --> OUT : VBR_n shunt tap
+OUT -- RTN
+CONN --> LOAD : fused/protected supply path
+LOAD --> CONN : dedicated return conductor(s)
+CONN --> RTN : branch return current
+MCU ..> SW : EN_n
+SW ..> MCU : FAULT_n / IMON_n / PG_n
+CONN ..> MCU : protected VBR_n sense
+CONN .. CHASSIS : shield bond strategy TBD
+
+note right of SW
+  Functional example: TPS25982 family on a
+  compatible protected rail, not a selected
+  automotive raw-battery interface.
+  Confirm exact reverse-blocking behavior.
+end note
+note right of CONN
+  Parallel contacts do not guarantee equal current.
+  Total-current protection may miss overload
+  of a single surviving contact.
+  Connector pin numbers remain unassigned.
+end note
+note bottom of LOAD
+  Inductive actuators need dedicated driver and clamp analysis.
+  Power-over-coax requires separate injection/link design.
+  Warning-light lamp loads are not this generic peripheral branch.
+end note
+legend bottom
+  CONCEPTUAL / NOT FOR FABRICATION
+  All component values, trip limits and layout details TBD.
+  Dotted lines indicate sensing/control/shield intent, not power.
+endlegend
+@enduml

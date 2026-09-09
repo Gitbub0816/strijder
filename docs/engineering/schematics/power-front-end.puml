@@ -1,0 +1,62 @@
+@startuml
+title Strijder power entry and backup path - conceptual connectivity
+top to bottom direction
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+rectangle "Vehicle source\nNominal 12 V class; envelope TBD" as BAT
+rectangle "F100\nSource-adjacent harness fuse" as F100
+rectangle "J101 / F101\nPower inlet / coordinated service fuse" as J101
+rectangle "D101\nCoordinated surge suppressor" as D101
+rectangle "U101 + Q101/Q102\nReverse / overvoltage protection\nBack-to-back FET reference circuit TBD" as PROT
+rectangle "L101 / C101 / C102\nDamped input filter" as FILTER
+rectangle "U102\nChemistry-specific charger\nInput budget / temperature inhibit" as CHG
+rectangle "BAT101 / BMS / F102\nQualified backup pack\nSource-adjacent pack fuse" as PACK
+rectangle "U103\nSource priority / reverse isolation\nVehicle preferred; discharge path" as MUX
+rectangle "U104\nRail conversion bank\nBuck / buck-boost as required" as DC
+rectangle "Protected peripheral branches\nSee peripheral-branch.puml" as BR
+rectangle "U105\nAlways-on supervisor\nShutdown / charging / load shedding" as MCU
+rectangle "PWR_RTN\nDedicated power return" as RTN
+
+BAT --> F100 : positive
+F100 --> J101 : VBAT_RAW
+J101 --> PROT : VBAT_FUSED
+J101 --> D101 : VBAT_FUSED shunt tap
+D101 --> RTN : transient return
+PROT --> FILTER : VBAT_PROT
+FILTER --> MUX : VBAT_FILTERED / source A
+FILTER --> CHG : VBAT_FILTERED
+CHG --> PACK : controlled charge path
+PACK --> MUX : PACK_OUT / source B
+MUX --> DC : VSYS_BACKED
+DC --> BR : VPERIPH_n
+MUX --> MCU : dedicated always-on regulator
+MCU ..> CHG : CHARGE_EN / current budget
+MCU ..> BR : EN_n / shutdown
+BAT -- RTN : negative return
+PACK -- RTN : pack return
+DC -- RTN : power return
+BR -- RTN : sized branch returns
+
+note right of PROT
+  Example family: LM7480-Q1; not selected.
+  Controller pins, MOSFET orientation, gate
+  components and suppression require ECAD.
+end note
+note right of MUX
+  VSYS_BACKED is NOT a fixed 12 V rail.
+  Charging and discharge paths must not
+  create cross-source or circulating current.
+end note
+note bottom of RTN
+  Filter capacitor, charger and supervisor returns also connect
+  to PWR_RTN; physical current loops require layout design.
+  Chassis/shields are not assumed power-return conductors.
+  Warning lamps use separate assessed fused distribution.
+  Signal arrows are control intent, not controller pin numbers.
+end note
+legend bottom
+  CONCEPTUAL / NOT FOR FABRICATION
+  Fuse values, voltage limits, pack, ratings and all pin numbers TBD.
+endlegend
+@enduml

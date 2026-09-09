@@ -1,0 +1,52 @@
+@startuml
+title Strijder vehicle I/O — inferred functional schematic, concept A
+top to bottom direction
+skinparam componentStyle rectangle
+rectangle "Vehicle CAN/sense\nJ201 — cavity map TBD" as vehicle
+rectangle "D201 / optional FL201\nBus protection / EMC" as protect
+rectangle "U202 CAN transceiver\nSilent hardware default" as can
+rectangle "IGN_RAW\nR201–R204 / C201 / D202\nDivider, filter, coordinated clamp" as ign
+rectangle "U203 comparator\nHysteresis / power-off protection" as compare
+rectangle "J202 physical selector\n16-position historical concept" as selector
+rectangle "U205 protected inputs\nDiscrete or bus — select one" as inputs
+rectangle "U201 deterministic I/O MCU\nPolicy / expiry / feedback" as mcu
+rectangle "U204 supervisor\nIndependent reset / inhibit" as watchdog
+rectangle "Vision Core\nAuthenticated local requests" as vision
+rectangle "U206 control interface\nAUTO_CMD_ENABLE\nEncoding and driver TBD" as driver
+rectangle "Independent manual resolver\nVendor-supported path, TBD\nNot parallel output drivers" as manual
+rectangle "J203 external lighting controller\nCommand arbitration / load switches" as light
+rectangle "Vehicle source\nDedicated load fuse" as source
+rectangle "Warning lamps\nIndividually protected branches" as lamps
+rectangle "J204 / J206\nAuxiliary sensor / validator\nElectrical meaning unresolved" as aux
+rectangle "J205 / U207 interlock\nUnpopulated until hazard review" as interlock
+vehicle --> protect : VEH_CAN_H/L
+protect --> can : protected pair
+can --> mcu : VEH_RXD
+mcu ..> can : VEH_TXD disabled by default
+vehicle --> ign : ignition sense allocation TBD
+ign --> compare : protected analog node
+compare --> mcu : IGN_VALID
+selector --> inputs : SEL_RAW
+inputs --> mcu : SEL_VALID
+selector --> manual : independent manual request
+vision --> mcu : named mode / expiry
+watchdog --> mcu : RESET
+watchdog --> driver : inhibit automatic requests
+mcu --> driver : LIGHT_CMD
+driver --> light : low-level commands only
+manual --> light : approved manual arbitration
+light --> mcu : LIGHT_FB / faults
+source -[#red]-> light : dedicated high-current power
+light -[#red]-> lamps : switched load power
+aux ..> mcu : protected interface TBD
+mcu ..> interlock : action / feedback TBD
+note bottom of lamps
+Load return is separately rated to vehicle source.
+Full warning-light current does not traverse compute PCB.
+end note
+note bottom of mcu
+Named nets are proposals, not released pin assignments.
+Vehicle network and private lighting network are separate.
+Safe state is function-specific, not universally all-off.
+end note
+@enduml

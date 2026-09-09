@@ -1,0 +1,44 @@
+@startuml
+title Strijder camera/display links — alternative functional circuits, not selected BOM
+top to bottom direction
+skinparam componentStyle rectangle
+rectangle "Protected camera rail\nVoltage / budget TBD" as rail
+rectangle "U301i branch protection\nPer-camera limit / fault telemetry" as limit
+rectangle "L301i PoC filter network\nBias injection / media coupling\nValues require link selection" as poc
+rectangle "J301i coax camera port\ni = 1..4 historical count" as connector
+rectangle "Remote camera i\nPoC extraction + regulation\nSensor + matched serializer" as camera
+rectangle "U302 compatible deserializer hub\nCSI output to selected carrier\nDS90UB960-Q1 is an example only" as hub
+rectangle "Vision Core / NVIDIA carrier\nDriver / capture / timestamps\nEncoding and evidence storage" as core
+rectangle "Option A: integrated Windows MDT\nProtected power + local network\nCadmium on panel computer" as panela
+rectangle "Option B: separate Windows computer\nProtected power + local network" as pcb
+rectangle "Option B touch display\nSupported video + touch interfaces\n40-position concept not validated" as panelb
+rectangle "Auxiliary display\nEight-position historical concept\nTransport and power TBD" as aux
+rectangle "Optional independent live-view path\nDedicated compatible receiver/output\nRequired only if independence specified" as independent
+rail --> limit : CAM_i_SUPPLY
+limit --> poc : protected DC
+poc --> connector : CAM_i_COAX power + media
+connector --> camera : compatible coax channel
+connector --> hub : AC-coupled media through qualified front end
+hub --> core : CSI lanes / control / link status
+limit --> core : CAM_i_FAULT
+core --> panela : MDT_DATA — choose A or B
+core --> pcb : MDT_DATA — choose A or B
+pcb --> panelb : DISPLAY_VIDEO + TOUCH_DATA
+core --> aux : AUX_VIDEO — core-dependent option
+camera ..> independent : only supported separate topology
+independent ..> aux : independent option instead
+note bottom of connector
+FAKRA identifies a connector family, not link protocol.
+Coax return/shield and chassis bonds require explicit design.
+No passive splitter or arbitrary voltage injection implied.
+end note
+note bottom of hub
+Alternative: separate camera power, network cameras, or USB.
+These are different circuits, not simultaneously required.
+Main dashcam head may include camera 1; count unresolved.
+end note
+note bottom of aux
+Solid core-to-display route is not independent of Linux.
+No released cavity numbers, component values, or footprints.
+end note
+@enduml
